@@ -1,0 +1,59 @@
+nav {
+  background-color: white;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 45px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav .item-nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-inline: 20px;
+}
+
+nav .account-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-inline: 20px;
+  margin-left: auto;
+}
+
+header {
+  background-image: url("../../assets/Home/casa2560x1440.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-height: 1440px;
+  width: auto;
+  height: 700px;
+  position: relative;
+}
+
+header div {
+  margin-right: auto;
+  margin-left: 100px;
+  background-color: white;
+  width: 560px;
+  height: 570px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+/*# sourceMappingURL=home.component.css.map */
