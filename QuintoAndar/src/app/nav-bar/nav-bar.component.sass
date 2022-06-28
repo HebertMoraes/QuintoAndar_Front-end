@@ -1,0 +1,30 @@
+@use '../../sass/_variables'
+@use '../../sass/_mixins'
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
+
+nav
+    position: fixed
+    z-index: 1
+    // border: 1px
+    // border-color: gray
+
+    background-color: variables.$secondary-color
+    padding-top: 35px
+    padding-bottom: 35px
+    padding-left: 28px
+    width: 100%
+
+    ul
+        list-style: none
+        display: flex
+
+        .item-nav-bar
+            @include mixins.item-nav-bar()
+
+        .account-icon
+            @include mixins.item-nav-bar()
+            margin-left: auto
