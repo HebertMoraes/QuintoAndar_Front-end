@@ -1,25 +1,27 @@
-@import '../../sass/variables'
+@use '../../sass/_variables'
+@use '../../sass/_mixins'
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
 
 nav
-    background-color: white
+    background-color: variables.$secondary-color
     padding-top: 35px
     padding-bottom: 35px
     padding-left: 28px
+    // justify-content: space-between
 
     ul
+        list-style: none
         display: flex
-        padding: 0px
-        margin: 0px
 
     .item-nav-bar
-        display: flex
-        align-items: center
-        padding-inline: 20px
+        @include mixins.item-nav-bar()
 
     .account-icon
-        display: flex
-        align-items: center
-        padding-inline: 20px
+        @include mixins.item-nav-bar()
         margin-left: auto
 
 header
@@ -35,17 +37,36 @@ header
 
     h1
         margin: 40px
-        
+        margin-bottom: 25px
+
     .btn-to-hire
-        margin-left: 40px
-    .btn-buy
+        @include mixins.margin-left()
+        height: 45px
+        position: relative
+        padding: 0px
+
+    .btn-to-buy
+        @include mixins.margin-left()
+        height: 45px
+        position: relative
+        padding: 0px
+
+    .selected-mode
+        top: 38px
+        padding: 0px
+        margin: 0px
+        position: absolute
+        height: 4px
+        width: 100%
+        background-color: black
 
     .line
         background-color: gray
         height: 1px
         width: 85%
-        margin-left: 40px
-        margin-right: 40px
+        @include mixins.margin-left()
+        @include mixins.margin-right()
+        margin-bottom: 10px
 
     .search-block-header
         background-color: white
@@ -59,11 +80,34 @@ header
             display: flex
 
 .field-search
-    padding: 20px
-    padding-left: 40px
+    padding: 5px
+    @include mixins.margin-left()
+
+    select
+        padding: 20px
 
 .search-button
     width: 85%
-    margin-left: 40px
-    margin-right: 40px
+    margin: 40px
+    margin-top: 27px
     padding: 15px
+
+.area-1
+    grid-area: area-1
+    background-color: #3957BD
+.area-2
+    grid-area: area-2
+    background-color: #FBF5E7
+
+.area-3
+    grid-area: area-3
+    background-image: url("../../assets/Home/casa800x498.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+.content-1 
+
+    display: grid
+    grid-template-areas: "area-1 area-1 area-1 area-1 area-2 area-2" "area-1 area-1 area-1 area-1 area-2 area-2" "area-1 area-1 area-1 area-1 area-3 area-3" "area-1 area-1 area-1 area-1 area-3 area-3"
+    padding: 85px

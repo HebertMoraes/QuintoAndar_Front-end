@@ -1,8 +1,8 @@
-nav {
+@use 'variables' {}nav {
   background-color: white;
   padding-top: 35px;
   padding-bottom: 35px;
-  padding-left: 45px;
+  padding-left: 28px;
 }
 
 nav ul {
@@ -45,15 +45,72 @@ header {
   position: relative;
 }
 
-header div {
-  margin-right: auto;
-  margin-left: 100px;
+header h1 {
+  margin: 40px;
+  margin-bottom: 25px;
+}
+
+header .btn-to-hire {
+  margin-left: 40px;
+  height: 45px;
+  position: relative;
+  padding: 0px;
+}
+
+header .btn-to-buy {
+  margin-left: 40px;
+  height: 45px;
+  position: relative;
+  padding: 0px;
+}
+
+header .selected-mode {
+  top: 38px;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: black;
+}
+
+header .line {
+  background-color: gray;
+  height: 1px;
+  width: 85%;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+header .search-block-header {
   background-color: white;
   width: 560px;
   height: 570px;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  top: 70px;
+  left: 120px;
+}
+
+header .search-block-header .price-rooms-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.field-search {
+  padding: 5px;
+  padding-left: 40px;
+}
+
+.field-search select {
+  padding: 20px;
+}
+
+.search-button {
+  width: 85%;
+  margin: 40px;
+  margin-top: 27px;
+  padding: 15px;
 }
 /*# sourceMappingURL=home.component.css.map */
