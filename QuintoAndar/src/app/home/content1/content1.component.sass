@@ -8,13 +8,16 @@
 
 .area-1
     grid-area: area-1
+    display: grid
+    grid-template-areas: "area-1-label-tittle" "area-1-label-text" "area-1-button"
     position: relative
     height: 540px
     background-color: #3957BD
 
     .area-1-label-tittle
-        position: absolute
+        grid-area: area-1-label-tittle
         margin: 35px
+        margin-bottom: 0px
         width: 400px
         // word-break: normal
 
@@ -23,14 +26,21 @@
             color: variables.$secondary-color
 
     .area-1-label-text
-        position: absolute
-        margin: 35px
+        grid-area: area-1-label-text
+        margin-left: 35px
         width: 400px
         bottom: 0px
 
         label
-            font-size: 1.1em
+            font-size: 1em
             color: variables.$secondary-color
+
+    .area-1-button
+        grid-area: area-1-button
+        margin: 35px
+
+        button
+            padding: 10px
 
     .area-1-image
         position: absolute
@@ -45,12 +55,26 @@
 
 .area-2
     grid-area: area-2
+    position: relative
     background-color: #FBF5E7
+
+    h2
+        margin: 20px
+        margin-bottom: 10px
+    p
+        margin: 20px
+        margin-top: 0px
+    
+    button
+        margin: 20px
+        padding: 10px
+        position: absolute
+        bottom: 0px
 
 .area-3
     grid-area: area-3
 
 .content-1
     display: grid
-    grid-template-areas: "area-1 area-1 area-1 area-1 area-2 area-2" "area-1 area-1 area-1 area-1 area-2 area-2" "area-1 area-1 area-1 area-1 area-3 area-3" "area-1 area-1 area-1 area-1 area-3 area-3"
+    grid-template-areas: "area-1 area-1 area-1 area-1 area-1 area-2" "area-1 area-1 area-1 area-1 area-1 area-2"
     padding: 85px
