@@ -10,6 +10,7 @@
     display: grid
     grid-template-areas: "area-1 area-1 area-1 area-1 area-1 area-2" "area-1 area-1 area-1 area-1 area-1 area-2"
     padding: 85px
+    object-fit: cover
 
     .area-1
         grid-area: area-1
@@ -66,8 +67,49 @@
         background-color: #FBF5E7
         width: 470px
 
+        .nav-carrousel
+            position: absolute
+            bottom: 0px            
+            width: 100%
+            height: 100px
+            z-index: 1
+
+            .bar-nav
+                position: absolute
+                bottom: 0px
+                margin: 10px
+                margin-bottom: 18px
+                width: 95.5%
+                height: 5px
+                background-color: black
+                z-index: 1
+
+                .icon-selected
+                    position: absolute
+                    width: 50%
+                    height: 5px
+                    // background-color: variables.$secondary-color
+                    background-color: red
+                    z-index: 2
+
+            .nav-left
+                position: absolute
+                padding: 15px
+                bottom: auto
+                right: 70px
+                margin: 10px
+
+            .nav-right
+                position: absolute
+                padding: 15px
+                bottom: auto
+                right: 10px
+                margin: 10px
+                
+
         .area-2-1-text
             grid-area: area-2-1-text
+            position: relative
 
             h2
                 margin: 20px
@@ -77,9 +119,10 @@
                 margin-top: 0px
 
             button
+                position: absolute
                 margin: 20px
                 padding: 10px
-                bottom: 0px
+                bottom: 40px
             
         .area-2-1-image
             grid-area: area-2-1-image
@@ -94,6 +137,7 @@
 
         .area-2-2-text
             grid-area: area-2-2-text
+            position: relative
 
             h2
                 margin: 20px
@@ -103,9 +147,10 @@
                 margin-top: 0px
 
             button
+                position: absolute
                 margin: 20px
                 padding: 10px
-                bottom: 0px
+                bottom: 40px
             
         .area-2-2-image
             grid-area: area-2-2-image

@@ -12,4 +12,12 @@ export class Content1Component implements OnInit {
   ngOnInit(): void {
   }
 
+  public goNavLeft (){
+
+  }
+
+  public goNavRight(){
+    
+  }
+
 }
