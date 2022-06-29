@@ -1,0 +1,53 @@
+<section class="content-5">
+    <h1>Descubra a casa que faz sentido para você</h1>
+    <div class="search-to-hire-buy">
+        <p>Imóveis mais recentes em</p>
+        <select>
+            <option value="" selected disabled hidden>São Paulo</option>
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Belo Horizonte</option>
+            <option>Porto Alegre</option>
+            <option>Campinas</option>
+            <option>Canoas</option>
+            <option>Guarulhos</option>
+            <option>Jundiaí</option>
+            <option>Nova Lima</option>
+            <option>Novo Hamburgo</option>
+            <option>Niterói</option>
+            <option>Osasco</option>
+            <option>Santo André</option>
+            <option>São Bernardo do Campo</option>
+            <option>São Caetano do Sul</option>
+            <option>Barueri</option>
+            <option>São Leopoldo</option>
+            <option>Contagem</option>
+            <option>Taboão da Serra</option>
+            <option>Diadema</option>
+            <option>Várzea Paulista</option>
+            <option>Santana de Parnaíba</option>
+        </select>
+        <div class="alternate-to-hire-buy">
+            <button class="btn-to-hire" (click)="btnToHire()">Alugar</button>
+            <button class="btn-to-buy" (click)="btnToBuy()">Comprar</button>
+        </div>
+    </div>
+    <div class="carrousel">
+        <div class="slides">
+            <div class="slide" *ngFor="let residence of listOfResidence">
+                <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+                <label>{{residence.name}}<br></label>
+                <label>{{residence.type}}<br></label>
+                <label>{{residence.price}}<br></label>
+                <label>{{residence.address}}<br></label>
+                <label>{{residence.squareMeters}}<br></label>
+                <label>{{residence.rooms}}<br></label>
+            </div>
+        </div>
+        <div class="nav-carrousel">
+            <button class="nav-left" (click)="goNavLeft()"> < </button>
+            <button class="nav-right" (click)="goNavRight()"> > </button>
+        </div>
+    </div>
+    
+</section>

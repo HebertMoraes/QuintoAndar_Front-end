@@ -1,0 +1,62 @@
+@use '../../../sass/_variables'
+@use '../../../sass/_mixins'
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
+
+.content-5
+    padding: 85px
+    position: relative
+
+    h1
+        padding: 50px
+        padding-left: 0px
+        font-size: 2.5em
+
+    .search-to-hire-buy
+        display: flex
+
+        select
+            margin-left: 10px
+
+        .alternate-to-hire-buy
+            position: absolute
+            right: 90px
+
+            button
+                margin-left: 10px
+
+    .carrousel
+
+        .slides
+            display: flex
+
+            .slide
+                position: relative
+                width: 300px
+                height: 300px
+                background-color: variables.$secondary-color
+                margin: 30px
+                margin-left: 0px
+                border: 1px solid gray
+                overflow: hidden
+
+                img
+                    max-width: 298px
+                    max-height: 299px
+
+        .nav-carrousel
+            background-color: red
+            position: relative
+
+            .nav-left
+                position: absolute
+                padding: 10px
+                right: 60px
+
+            .nav-right
+                position: absolute
+                padding: 10px
+                right: 0px
