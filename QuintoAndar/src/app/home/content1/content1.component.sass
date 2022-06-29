@@ -6,75 +6,114 @@
     margin: 0px
     box-sizing: border-box
 
-.area-1
-    grid-area: area-1
-    display: grid
-    grid-template-areas: "area-1-label-tittle" "area-1-label-text" "area-1-button"
-    position: relative
-    height: 540px
-    background-color: #3957BD
-
-    .area-1-label-tittle
-        grid-area: area-1-label-tittle
-        margin: 35px
-        margin-bottom: 0px
-        width: 400px
-        // word-break: normal
-
-        label
-            font-size: 4em
-            color: variables.$secondary-color
-
-    .area-1-label-text
-        grid-area: area-1-label-text
-        margin-left: 35px
-        width: 400px
-        bottom: 0px
-
-        label
-            font-size: 1em
-            color: variables.$secondary-color
-
-    .area-1-button
-        grid-area: area-1-button
-        margin: 35px
-
-        button
-            padding: 10px
-
-    .area-1-image
-        position: absolute
-        background-image: url("../../../assets/Home/content1-area1.jpg")
-        background-repeat: no-repeat
-        background-size: cover
-        background-position: center
-        height: 470px
-        width: 280px
-        margin: 35px
-        right: 0px
-
-.area-2
-    grid-area: area-2
-    position: relative
-    background-color: #FBF5E7
-
-    h2
-        margin: 20px
-        margin-bottom: 10px
-    p
-        margin: 20px
-        margin-top: 0px
-    
-    button
-        margin: 20px
-        padding: 10px
-        position: absolute
-        bottom: 0px
-
-.area-3
-    grid-area: area-3
-
 .content-1
     display: grid
     grid-template-areas: "area-1 area-1 area-1 area-1 area-1 area-2" "area-1 area-1 area-1 area-1 area-1 area-2"
     padding: 85px
+
+    .area-1
+        grid-area: area-1
+        display: grid
+        grid-template-areas: "area-1-label-tittle" "area-1-label-text" "area-1-button"
+        position: relative
+        height: 540px
+        background-color: #3957BD
+
+        .area-1-label-tittle
+            grid-area: area-1-label-tittle
+            margin: 35px
+            margin-bottom: 0px
+            width: 400px
+            // word-break: normal
+
+            label
+                font-size: 4em
+                color: variables.$secondary-color
+
+        .area-1-label-text
+            grid-area: area-1-label-text
+            margin-left: 35px
+            width: 400px
+            bottom: 0px
+
+            label
+                font-size: 1em
+                color: variables.$secondary-color
+
+        .area-1-button
+            grid-area: area-1-button
+            margin: 35px
+
+            button
+                padding: 10px
+
+        .area-1-image
+            position: absolute
+            background-image: url("../../../assets/Home/content1-area1.jpg")
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            height: 470px
+            width: 280px
+            margin: 35px
+            right: 0px
+
+    .area-2
+        grid-area: area-2
+        position: relative
+        display: grid
+        grid-template-areas: "area-2-1-text area-2-2-text" "area-2-1-image area-2-2-image"
+        background-color: #FBF5E7
+        width: 470px
+
+        .area-2-1-text
+            grid-area: area-2-1-text
+
+            h2
+                margin: 20px
+                margin-bottom: 10px
+            p
+                margin: 20px
+                margin-top: 0px
+
+            button
+                margin: 20px
+                padding: 10px
+                bottom: 0px
+            
+        .area-2-1-image
+            grid-area: area-2-1-image
+            background-image: url("../../../assets/Home/pessoa670x330.png")
+            position: absolute
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            height: 250px
+            width: 470px
+            bottom: 0px
+
+        .area-2-2-text
+            grid-area: area-2-2-text
+
+            h2
+                margin: 20px
+                margin-bottom: 10px
+            p
+                margin: 20px
+                margin-top: 0px
+
+            button
+                margin: 20px
+                padding: 10px
+                bottom: 0px
+            
+        .area-2-2-image
+            grid-area: area-2-2-image
+            background-image: url("../../../assets/Home/pessoa670x330.png")
+            position: absolute
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            height: 250px
+            width: 470px
+            bottom: 0px
