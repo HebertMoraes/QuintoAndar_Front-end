@@ -13,8 +13,8 @@ export class Content1Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.slides = (document.getElementById("slides") as HTMLElement);
-    this.iconSelected = (document.getElementById("icon-selected") as HTMLElement);
+    this.slides = (document.getElementById("slides-content-1") as HTMLElement);
+    this.iconSelected = (document.getElementById("icon-selected-content-1") as HTMLElement);
   }
 
   public goNavLeft (){

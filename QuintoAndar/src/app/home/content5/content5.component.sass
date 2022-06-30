@@ -29,9 +29,15 @@
                 margin-left: 10px
 
     .carrousel
+        // background-color: red
+        overflow: hidden
 
         .slides
+            // background-color: orange
             display: flex
+            max-width: 1345px
+            transition: transform 1s
+            transform: translateX(0)
 
             .slide
                 position: relative
@@ -41,22 +47,20 @@
                 margin: 30px
                 margin-left: 0px
                 border: 1px solid gray
-                overflow: hidden
 
                 img
                     max-width: 298px
                     max-height: 299px
 
-        .nav-carrousel
-            background-color: red
-            position: relative
+    .nav-carrousel
+        position: relative
 
-            .nav-left
-                position: absolute
-                padding: 10px
-                right: 60px
+        .nav-left
+            position: absolute
+            padding: 10px
+            right: 60px
 
-            .nav-right
-                position: absolute
-                padding: 10px
-                right: 0px
+        .nav-right
+            position: absolute
+            padding: 10px
+            right: 0px

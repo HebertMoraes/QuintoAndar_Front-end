@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="carrousel">
-        <div class="slides">
+        <div class="slides" id="slides-content-5">
             <div class="slide" *ngFor="let residence of listOfResidence">
                 <img src="../../../assets/Home/casa800x498.jpg" alt="" />
                 <label>{{residence.name}}<br></label>
@@ -44,10 +44,9 @@
                 <label>{{residence.rooms}}<br></label>
             </div>
         </div>
-        <div class="nav-carrousel">
-            <button class="nav-left" (click)="goNavLeft()"> < </button>
-            <button class="nav-right" (click)="goNavRight()"> > </button>
-        </div>
     </div>
-    
+    <div class="nav-carrousel">
+        <button class="nav-left" (click)="goNavLeft()"> < </button>
+        <button class="nav-right" (click)="goNavRight()"> > </button>
+    </div>
 </section>

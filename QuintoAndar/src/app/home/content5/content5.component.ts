@@ -10,6 +10,9 @@ export class Content5Component implements OnInit {
 
   slides!: HTMLElement;
 
+  posSlides: number = 0;
+  distanceSlideMov: number = 25;
+
   allResidences = {
     "residence1":
     {
@@ -29,7 +32,7 @@ export class Content5Component implements OnInit {
 
   ngOnInit(): void {
 
-    this.slides = (document.getElementById("slides") as HTMLElement);
+    this.slides = (document.getElementById("slides-content-5") as HTMLElement);
 
     let residence1: Residence = new Residence(this.allResidences.residence1.name, this.allResidences.residence1.type,
       this.allResidences.residence1.price, this.allResidences.residence1.address,
@@ -39,7 +42,7 @@ export class Content5Component implements OnInit {
       this.allResidences.residence2.price, this.allResidences.residence2.address,
       Number(this.allResidences.residence2.squareMeters), Number(this.allResidences.residence2.rooms));
 
-    this.listOfResidence = [residence1, residence2, residence1, residence2, residence1, residence2, residence1];
+    this.listOfResidence = [residence1, residence2, residence1, residence2, residence1, residence2, residence1, residence2, residence1];
   }
 
   public btnToHire() {
@@ -50,13 +53,20 @@ export class Content5Component implements OnInit {
 
   }
 
-  public goNavLeft (){
+  public goNavLeft() {
     this.slides.style.transition = "transform 1s";
-    this.slides.style.transform = "translateX(0)";
+    if (this.posSlides < 0) {
+      this.posSlides += this.distanceSlideMov;
+      this.slides.style.transform = `translateX(${this.posSlides}%)`;
+    }    
   }
 
-  public goNavRight(){
+  public goNavRight() {
     this.slides.style.transition = "transform 1s";
-    this.slides.style.transform = "translateX(-100%)";
+    if (this.posSlides > -140) {
+      this.posSlides -= this.distanceSlideMov;
+      this.slides.style.transform = `translateX(${this.posSlides}%)`;
+    }
+    
   }
 }
