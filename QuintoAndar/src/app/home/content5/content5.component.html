@@ -28,13 +28,13 @@
             <option>Santana de Parnaíba</option>
         </select>
         <div class="alternate-to-hire-buy">
-            <button class="btn-to-hire" (click)="btnToHire()">Alugar</button>
-            <button class="btn-to-buy" (click)="btnToBuy()">Comprar</button>
+            <button (click)="btnToHire()">Alugar</button>
+            <button (click)="btnToBuy()">Comprar</button>
         </div>
     </div>
-    <div class="carrousel">
-        <div class="slides" id="slides-content-5">
-            <div class="slide" *ngFor="let residence of listOfResidence">
+    <div class="carrousel-content-5">
+        <div class="slides-content-5" id="slides-content-5">
+            <div class="slide-content-5" *ngFor="let residence of listOfResidence">
                 <img src="../../../assets/Home/casa800x498.jpg" alt="" />
                 <label>{{residence.name}}<br></label>
                 <label>{{residence.type}}<br></label>
@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="nav-carrousel">
+    <div class="nav-carrousel-content-5">
         <button class="nav-left" (click)="goNavLeft()"> < </button>
         <button class="nav-right" (click)="goNavRight()"> > </button>
     </div>
