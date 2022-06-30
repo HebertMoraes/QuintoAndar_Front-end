@@ -9,6 +9,7 @@ export class Residence {
         this.rooms = rooms;
     }
 
+    id!: number;
     name!: string;
     type!: string;
     price!: string;

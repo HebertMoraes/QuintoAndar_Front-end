@@ -2,31 +2,12 @@
     <h1>Descubra a casa que faz sentido para você</h1>
     <div class="search-to-hire-buy">
         <p>Imóveis mais recentes em</p>
-        <select>
-            <option value="" selected disabled hidden>São Paulo</option>
-            <option>São Paulo</option>
-            <option>Rio de Janeiro</option>
-            <option>Belo Horizonte</option>
-            <option>Porto Alegre</option>
-            <option>Campinas</option>
-            <option>Canoas</option>
-            <option>Guarulhos</option>
-            <option>Jundiaí</option>
-            <option>Nova Lima</option>
-            <option>Novo Hamburgo</option>
-            <option>Niterói</option>
-            <option>Osasco</option>
-            <option>Santo André</option>
-            <option>São Bernardo do Campo</option>
-            <option>São Caetano do Sul</option>
-            <option>Barueri</option>
-            <option>São Leopoldo</option>
-            <option>Contagem</option>
-            <option>Taboão da Serra</option>
-            <option>Diadema</option>
-            <option>Várzea Paulista</option>
-            <option>Santana de Parnaíba</option>
+
+        <select id="select-states-content-5" (change)="changeListOfResidences()"> 
+            <option selected disabled hidden>alooo</option>
+            <option *ngFor="let state of allStates" value="{{state}}">{{state}}</option>
         </select>
+
         <div class="alternate-to-hire-buy">
             <button (click)="btnToHire()">Alugar</button>
             <button (click)="btnToBuy()">Comprar</button>
