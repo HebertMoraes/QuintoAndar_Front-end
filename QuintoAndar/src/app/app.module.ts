@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { Content1Component } from './home/content1/content1.component';
 import { Content5Component } from './home/content5/content5.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    CommonModule
+    CommonModule, 
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

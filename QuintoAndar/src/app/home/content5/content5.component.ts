@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { filter, map } from 'rxjs';
 import { Residence } from 'src/app/entities/residence';
+import { ResidenceService } from 'src/app/services/residence.service';
 
 @Component({
   selector: 'app-content5',
@@ -13,19 +15,6 @@ export class Content5Component implements OnInit {
   posSlides: number = 0;
   distanceSlideMov: number = 25;
 
-  allResidences = {
-    "residence1":
-    {
-      "name": "apartamento-exemplo-1", "type": "apartamento", "price": "R$999,00",
-      "address": { "state": "São Paulo", "street": "Rua Exemplo 1" }, "squareMeters": "50m", "rooms": "3 quartos"
-    },
-    "residence2":
-    {
-      "name": "apartamento-exemplo-2", "type": "casa", "price": "R$555,00",
-      "address": { "state": "Rio de Janeiro", "street": "Rua Exemplo 2" }, "squareMeters": "40m", "rooms": "2 quartos"
-    }
-  };
-
   allStates = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Campinas", "Canoas", "Guarulhos",
     "Jundiaí", "Nova Lima", "Novo Hamburgo", "Niterói", "Osasco", "Santo André", "São Bernardo do Campo",
     "São Caetano do Sul", "Barueri", "São Leopoldo", "Contagem", "Taboão da Serra", "Diadema", "Várzea Paulista",
@@ -36,7 +25,7 @@ export class Content5Component implements OnInit {
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
 
-  constructor() { }
+  constructor(private residenceService: ResidenceService) { }
 
   ngOnInit(): void {
 
@@ -45,19 +34,8 @@ export class Content5Component implements OnInit {
     this.selectStatesHeader = (document.getElementById("select-states-header") as HTMLSelectElement);
     this.selectStatesContent5 = (document.getElementById("select-states-content-5") as HTMLSelectElement);
 
-    let residence1: Residence = new Residence(this.allResidences.residence1.name, this.allResidences.residence1.type,
-      this.allResidences.residence1.price, this.allResidences.residence1.address.state,
-      Number(this.allResidences.residence1.squareMeters), Number(this.allResidences.residence1.rooms));
-
-    let residence2: Residence = new Residence(this.allResidences.residence2.name, this.allResidences.residence2.type,
-      this.allResidences.residence2.price, this.allResidences.residence2.address.state,
-      Number(this.allResidences.residence2.squareMeters), Number(this.allResidences.residence2.rooms));
-
-
-    //foreach allResidences, se allResidences.address.state == currentSelectedState da HomeComponent, colocar esses iguais nessa 
-    //lista abaixo; e inserir uma função que altere essa lista também toda vez que o selectStates for trocado de valor lá 
-    //no Header da HomeComponent
-    this.listOfResidence = [residence1, residence2, residence1, residence2, residence1, residence2, residence1, residence2, residence1];
+    this.residenceService.getAll().subscribe(
+      residences => this.listOfResidence = residences);
   }
 
   public btnToHire() {
@@ -88,15 +66,12 @@ export class Content5Component implements OnInit {
 
     this.selectStatesHeader.value = this.selectStatesContent5.value;
 
-    let residence2: Residence = new Residence(this.allResidences.residence2.name, this.allResidences.residence2.type,
-      this.allResidences.residence2.price, this.allResidences.residence2.address.state,
-      Number(this.allResidences.residence2.squareMeters), Number(this.allResidences.residence2.rooms));
-
+    //USANDO O getAll() ao invés de usar o getByState() porque no back-end o getByState() não está feito
+    // this.residenceService.getAll().subscribe(
+    //   residences => this.listOfResidence = residences);
 
     
-    //AQUI PRECISA FAZER UM SUBSCRIBE EM UMA SERVICE QUE FAZ UM getByState(), 
-    //passando como parâmetro o value do selectStatesContent5, o resultado é inserido na listOfResidence
-
-    this.listOfResidence = [residence2, residence2, residence2, residence2];
+    this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
+      residences => this.listOfResidence = residences);
   }
 }

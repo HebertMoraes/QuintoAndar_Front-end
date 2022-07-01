@@ -1,0 +1,28 @@
+{
+    "allResidences": [
+        {
+            "id": "123",
+            "name": "apartamentoooo-exemplo",
+            "type": "apartamento",
+            "price": "R$999,00",
+            "address": {
+                "state": "São Paulo",
+                "street": "Rua Exemplo 1"
+            },
+            "squareMeters": "50m",
+            "rooms": "3 quartos"
+        },
+        {
+            "id": "12345",
+            "name": "casaaaa-exemplo",
+            "type": "casa",
+            "price": "R$555,00",
+            "address": {
+                "state": "Rio de Janeiro",
+                "street": "Rua Exemplo 2"
+            },
+            "squareMeters": "40m",
+            "rooms": "2 quartos"
+        }
+    ]
+}
