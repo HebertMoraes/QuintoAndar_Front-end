@@ -18,9 +18,12 @@ export class Content5Component implements OnInit {
 
   posSlides: number = 0;
   distanceSlideMov: number = 25;
-  
+
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
+
+  btnFilterToHire!: HTMLElement;
+  btnFilterToBuy!: HTMLElement;
 
   constructor() { }
 
@@ -30,17 +33,31 @@ export class Content5Component implements OnInit {
 
     this.selectStatesHeader = (document.getElementById("select-states-header") as HTMLSelectElement);
     this.selectStatesContent5 = (document.getElementById("select-states-content-5") as HTMLSelectElement);
+
+    this.btnFilterToHire = (document.getElementById("btn-to-hire-content5") as HTMLElement);
+    this.btnFilterToBuy = (document.getElementById("btn-to-buy-content5") as HTMLElement);
   }
 
   public btnToHire() {
-    //
+
+    if (!this.btnFilterToHire.classList.contains('selected')) {
+      this.btnFilterToBuy.classList.remove('selected');
+      this.btnFilterToHire.classList.add('selected');
+    }
+    this.updateListResidence.emit(this.selectStatesContent5.value);
   }
 
   public btnToBuy() {
-    //
+
+    if (!this.btnFilterToBuy.classList.contains('selected')) {
+      this.btnFilterToHire.classList.remove('selected');
+      this.btnFilterToBuy.classList.add('selected');
+    }
+    this.updateListResidence.emit(this.selectStatesContent5.value);
   }
 
   public goNavLeft() {
+
     this.slides.style.transition = "transform 1s";
     if (this.posSlides < 0) {
       this.posSlides += this.distanceSlideMov;
@@ -57,7 +74,7 @@ export class Content5Component implements OnInit {
   }
 
   public choiceState() {
-    
+
     this.selectStatesHeader.value = this.selectStatesContent5.value;
 
     this.updateListResidence.emit(this.selectStatesContent5.value);
