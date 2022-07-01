@@ -3,7 +3,7 @@
     <div class="search-to-hire-buy">
         <p>Imóveis mais recentes em</p>
 
-        <select id="select-states-content-5" (change)="changeListOfResidences()"> 
+        <select id="select-states-content-5" (change)="choiceState()"> 
             <option selected disabled hidden>alooo</option>
             <option *ngFor="let state of allStates" value="{{state}}">{{state}}</option>
         </select>

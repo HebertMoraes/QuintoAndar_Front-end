@@ -62,9 +62,18 @@ export class Content5Component implements OnInit {
     }
   }
 
-  public changeListOfResidences() {
+  public choiceState() {
     
-    this.selectStatesHeader.value = this.selectStatesContent5.value;
+    // this.selectStatesHeader.value = this.selectStatesContent5.value;
+    // this.changeFromContent5();
+
+    this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
+      residences => this.listOfResidence = residences);
+  }
+
+  public changeFromHeader () {
+
+    this.selectStatesContent5.value = this.selectStatesHeader.value;
 
     this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
       residences => this.listOfResidence = residences);

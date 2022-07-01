@@ -80,10 +80,17 @@ export class HomeComponent implements OnInit {
 
   public choiceState() {
 
-    this.content5.selectStatesContent5.value = this.selectStatesHeader.value;
+    // this.content5.selectStatesContent5.value = this.selectStatesHeader.value;
     
-    this.content5.changeListOfResidences();
+    this.content5.changeFromHeader();
 
+    //inserir os bairros possíveis por meio do resultado de uma service
+  }
+
+  public changeFromContent5 () {
+
+    this.selectStatesHeader.value = this.selectStatesContent5.value;
+    
     //inserir os bairros possíveis por meio do resultado de uma service
   }
 }

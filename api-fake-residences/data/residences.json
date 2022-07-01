@@ -13,6 +13,18 @@
             "rooms": "3 quartos"
         },
         {
+            "id": "1234",
+            "name": "apartamentoooo-exemplo-2",
+            "type": "apartamento",
+            "price": "R$1.100,00",
+            "address": {
+                "state": "São Paulo",
+                "street": "Rua Exemplo 2"
+            },
+            "squareMeters": "50m",
+            "rooms": "4 quartos"
+        },
+        {
             "id": "12345",
             "name": "casaaaa-exemplo",
             "type": "casa",
@@ -23,6 +35,30 @@
             },
             "squareMeters": "40m",
             "rooms": "2 quartos"
+        },
+        {
+            "id": "123456",
+            "name": "casaaaa-exemplo-2",
+            "type": "casa",
+            "price": "R$888,00",
+            "address": {
+                "state": "Rio de Janeiro",
+                "street": "Rua Exemplo 3"
+            },
+            "squareMeters": "40m",
+            "rooms": "3 quartos"
+        }, 
+        {
+            "id": "1234567",
+            "name": "casaaaa-exemplo-3",
+            "type": "casa",
+            "price": "R$790,00",
+            "address": {
+                "state": "Osasco",
+                "street": "Rua Exemplo 4"
+            },
+            "squareMeters": "25m",
+            "rooms": "1 quartos"
         }
     ]
 }
