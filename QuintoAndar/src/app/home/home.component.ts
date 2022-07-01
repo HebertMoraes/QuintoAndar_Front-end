@@ -1,4 +1,5 @@
 import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Content5Component } from './content5/content5.component';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,8 @@ import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from '@an
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild(Content5Component) content5!: Content5Component;
 
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
@@ -76,7 +79,10 @@ export class HomeComponent implements OnInit {
   }
 
   public choiceState() {
-    this.selectStatesContent5.value = this.selectStatesHeader.value;
+
+    this.content5.selectStatesContent5.value = this.selectStatesHeader.value;
+    
+    this.content5.changeListOfResidences();
 
     //inserir os bairros possíveis por meio do resultado de uma service
   }

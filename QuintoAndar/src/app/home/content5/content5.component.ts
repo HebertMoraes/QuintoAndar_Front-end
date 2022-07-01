@@ -63,14 +63,9 @@ export class Content5Component implements OnInit {
   }
 
   public changeListOfResidences() {
-
+    
     this.selectStatesHeader.value = this.selectStatesContent5.value;
 
-    //USANDO O getAll() ao invés de usar o getByState() porque no back-end o getByState() não está feito
-    // this.residenceService.getAll().subscribe(
-    //   residences => this.listOfResidence = residences);
-
-    
     this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
       residences => this.listOfResidence = residences);
   }
