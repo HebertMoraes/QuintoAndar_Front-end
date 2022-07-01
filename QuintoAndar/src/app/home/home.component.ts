@@ -10,8 +10,6 @@ import { Content5Component } from './content5/content5.component';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild(Content5Component) content5!: Content5Component;
-
   listOfResidence!: Residence[];
 
   allStates = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Campinas", "Canoas", "Guarulhos",
@@ -24,11 +22,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.residenceService.getAll().subscribe(
+      residences => this.listOfResidence = residences);
   }
 
   public changeListOfResidence(state: string){
-    
+
     this.residenceService.getByState(state).subscribe(
       residences => this.listOfResidence = residences);
   }

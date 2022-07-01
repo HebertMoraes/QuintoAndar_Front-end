@@ -76,7 +76,5 @@ export class HeaderComponent implements OnInit {
     this.selectStatesContent5.value = this.selectStatesHeader.value;
 
     this.changeState.emit(this.selectStatesHeader.value);
-
-    //inserir os bairros possíveis por meio do resultado de uma service
   }
 }

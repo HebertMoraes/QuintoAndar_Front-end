@@ -30,17 +30,16 @@ export class Content5Component implements OnInit {
 
     this.selectStatesHeader = (document.getElementById("select-states-header") as HTMLSelectElement);
     this.selectStatesContent5 = (document.getElementById("select-states-content-5") as HTMLSelectElement);
-
-    this.residenceService.getAll().subscribe(
-      residences => this.listOfResidence = residences);
   }
 
   public btnToHire() {
-
+    //filtrar os que é para alugar do listOfResidence, fazer isso por meio de output para o HomeComponent, e ele faz de
+    //lá para mudar a variavel original
   }
 
   public btnToBuy() {
-
+    //filtrar os que é para comprar do listOfResidence, fazer isso por meio de output para o HomeComponent, e ele faz de
+    //lá para mudar a variavel original
   }
 
   public goNavLeft() {
@@ -64,7 +63,5 @@ export class Content5Component implements OnInit {
     this.selectStatesHeader.value = this.selectStatesContent5.value;
 
     this.changeState.emit(this.selectStatesHeader.value);
-
-    //inserir os bairros possíveis por meio do resultado de uma service
   }
 }
