@@ -9,6 +9,7 @@ import { Content1Component } from './home/content1/content1.component';
 import { Content5Component } from './home/content5/content5.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './home/header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavBarComponent,
     Content1Component,
-    Content5Component
+    Content5Component,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

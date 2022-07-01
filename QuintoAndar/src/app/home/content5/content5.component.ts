@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { filter, map } from 'rxjs';
 import { Residence } from 'src/app/entities/residence';
 import { ResidenceService } from 'src/app/services/residence.service';
@@ -10,18 +10,15 @@ import { ResidenceService } from 'src/app/services/residence.service';
 })
 export class Content5Component implements OnInit {
 
+  @Input() allStates!: string[];
+  @Input() listOfResidence!: Residence[];
+  @Output() changeState = new EventEmitter();
+
   slides!: HTMLElement;
 
   posSlides: number = 0;
   distanceSlideMov: number = 25;
-
-  allStates = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Campinas", "Canoas", "Guarulhos",
-    "Jundiaí", "Nova Lima", "Novo Hamburgo", "Niterói", "Osasco", "Santo André", "São Bernardo do Campo",
-    "São Caetano do Sul", "Barueri", "São Leopoldo", "Contagem", "Taboão da Serra", "Diadema", "Várzea Paulista",
-    "Santana de Parnaíba"];
-
-  listOfResidence!: Residence[];
-
+  
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
 
@@ -64,18 +61,10 @@ export class Content5Component implements OnInit {
 
   public choiceState() {
     
-    // this.selectStatesHeader.value = this.selectStatesContent5.value;
-    // this.changeFromContent5();
+    this.selectStatesHeader.value = this.selectStatesContent5.value;
 
-    this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
-      residences => this.listOfResidence = residences);
-  }
+    this.changeState.emit(this.selectStatesHeader.value);
 
-  public changeFromHeader () {
-
-    this.selectStatesContent5.value = this.selectStatesHeader.value;
-
-    this.residenceService.getByState(this.selectStatesContent5.value).subscribe(
-      residences => this.listOfResidence = residences);
+    //inserir os bairros possíveis por meio do resultado de uma service
   }
 }
