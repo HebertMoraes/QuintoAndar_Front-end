@@ -9,7 +9,7 @@ import { Residence } from 'src/app/entities/residence';
 export class HeaderComponent implements OnInit {
 
   @Input() allStates!: string[];
-  @Output() changeState = new EventEmitter();
+  @Output() updateListResidence = new EventEmitter();
 
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
@@ -75,6 +75,6 @@ export class HeaderComponent implements OnInit {
 
     this.selectStatesContent5.value = this.selectStatesHeader.value;
 
-    this.changeState.emit(this.selectStatesHeader.value);
+    this.updateListResidence.emit(this.selectStatesHeader.value);
   }
 }

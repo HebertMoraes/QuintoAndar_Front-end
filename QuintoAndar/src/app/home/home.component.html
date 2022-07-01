@@ -1,8 +1,9 @@
-<app-header [allStates]="allStates" (changeState)="changeListOfResidence($event)"></app-header>
+<app-header [allStates]="allStates" (updateListResidence)="updateListOfResidence($event)"></app-header>
 
 <main>
     <app-content1></app-content1>
-    <app-content5 [listOfResidence]="listOfResidence" [allStates]="allStates" (changeState)="changeListOfResidence($event)"></app-content5>
+    <app-content5 [listOfResidence]="listOfResidence" [allStates]="allStates" 
+        (updateListResidence)="updateListOfResidence($event)"></app-content5>
 </main>
 
 <footer>

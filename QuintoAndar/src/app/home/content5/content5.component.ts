@@ -12,7 +12,7 @@ export class Content5Component implements OnInit {
 
   @Input() allStates!: string[];
   @Input() listOfResidence!: Residence[];
-  @Output() changeState = new EventEmitter();
+  @Output() updateListResidence = new EventEmitter();
 
   slides!: HTMLElement;
 
@@ -22,7 +22,7 @@ export class Content5Component implements OnInit {
   selectStatesHeader!: HTMLSelectElement;
   selectStatesContent5!: HTMLSelectElement;
 
-  constructor(private residenceService: ResidenceService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
@@ -33,13 +33,11 @@ export class Content5Component implements OnInit {
   }
 
   public btnToHire() {
-    //filtrar os que é para alugar do listOfResidence, fazer isso por meio de output para o HomeComponent, e ele faz de
-    //lá para mudar a variavel original
+    //
   }
 
   public btnToBuy() {
-    //filtrar os que é para comprar do listOfResidence, fazer isso por meio de output para o HomeComponent, e ele faz de
-    //lá para mudar a variavel original
+    //
   }
 
   public goNavLeft() {
@@ -62,6 +60,6 @@ export class Content5Component implements OnInit {
     
     this.selectStatesHeader.value = this.selectStatesContent5.value;
 
-    this.changeState.emit(this.selectStatesHeader.value);
+    this.updateListResidence.emit(this.selectStatesContent5.value);
   }
 }

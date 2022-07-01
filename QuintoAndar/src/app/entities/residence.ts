@@ -14,6 +14,7 @@ export class Residence {
     id!: number;
     name!: string;
     type!: string;
+    sellMode!: string;
     price!: string;
     address!: Address;
     squareMeters!: number;

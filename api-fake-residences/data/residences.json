@@ -4,6 +4,7 @@
             "id": "123",
             "name": "apartamentoooo-exemplo",
             "type": "apartamento",
+            "sellMode": "to-hire",
             "price": "R$999,00",
             "address": {
                 "state": "São Paulo",
@@ -16,6 +17,7 @@
             "id": "1234",
             "name": "apartamentoooo-exemplo-2",
             "type": "apartamento",
+            "sellMode": "buy",
             "price": "R$1.100,00",
             "address": {
                 "state": "São Paulo",
@@ -28,6 +30,7 @@
             "id": "12345",
             "name": "casaaaa-exemplo",
             "type": "casa",
+            "sellMode": "to-hire",
             "price": "R$555,00",
             "address": {
                 "state": "Rio de Janeiro",
@@ -40,6 +43,7 @@
             "id": "123456",
             "name": "casaaaa-exemplo-2",
             "type": "casa",
+            "sellMode": "buy",
             "price": "R$888,00",
             "address": {
                 "state": "Rio de Janeiro",
@@ -52,6 +56,7 @@
             "id": "1234567",
             "name": "casaaaa-exemplo-3",
             "type": "casa",
+            "sellMode": "buy",
             "price": "R$790,00",
             "address": {
                 "state": "Osasco",
