@@ -10,6 +10,7 @@ import { Content5Component } from './home/content5/content5.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './home/header/header.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderComponent } from './home/header/header.component';
     NavBarComponent,
     Content1Component,
     Content5Component,
-    HeaderComponent
+    HeaderComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,
