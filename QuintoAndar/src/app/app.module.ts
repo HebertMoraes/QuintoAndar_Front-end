@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './home/header/header.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { CardResidenceComponent } from './residence-components/card-residence/card-residence.component';
+import { ResidencePageComponent } from './residence-components/residence-page/residence-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { UserAccountComponent } from './user-account/user-account.component';
     Content1Component,
     Content5Component,
     HeaderComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    CardResidenceComponent,
+    ResidencePageComponent
   ],
   imports: [
     BrowserModule,
