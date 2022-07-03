@@ -1,0 +1,35 @@
+@use '../../sass/_variables'
+@use '../../sass/_mixins'
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
+
+
+.user-account
+    padding: 85px
+    position: relative
+    margin-top: 80px
+
+    .carrousel-user-account
+        overflow: hidden
+
+        .slides-user-account
+            display: flex
+            max-width: 1345px
+            transition: transform 1s
+            transform: translateX(0)
+
+    .nav-carrousel-user-account
+        position: relative
+
+        .nav-left
+            position: absolute
+            padding: 10px
+            right: 60px
+
+        .nav-right
+            position: absolute
+            padding: 10px
+            right: 0px

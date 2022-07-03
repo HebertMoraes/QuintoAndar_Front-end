@@ -15,16 +15,7 @@
     </div>
     <div class="carrousel-content-5">
         <div class="slides-content-5" id="slides-content-5">
-            <!-- <div class="slide-content-5" *ngFor="let residence of listOfResidence">
-                <img src="../../../assets/Home/casa800x498.jpg" alt="" />
-                <label>{{residence.name}}<br></label>
-                <label>{{residence.type}}<br></label>
-                <label>{{residence.price}}<br></label>
-                <label>{{residence.address.state}}<br></label>
-                <label>{{residence.squareMeters}}<br></label>
-                <label>{{residence.rooms}}<br></label>
-                <label>{{residence.sellMode}}<br></label>
-            </div> -->
+            
             <app-card-residence *ngFor="let residence of listOfResidence" 
             [residence]="residence"></app-card-residence>
             

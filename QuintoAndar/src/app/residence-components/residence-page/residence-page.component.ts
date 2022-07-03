@@ -10,6 +10,6 @@ export class ResidencePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
 }

@@ -1,1 +1,17 @@
-<p>user-account works!</p>
+<section class="user-account">
+
+    <h1>WishList</h1>
+
+    <div class="carrousel-user-account">
+        <div class="slides-user-account" id="slides-user-account">
+
+            <app-card-residence *ngFor="let residence of listOfResidence" [residence]="residence"></app-card-residence>
+
+        </div>
+    </div>
+    <div class="nav-carrousel-user-account">
+        <button class="nav-left" (click)="goNavLeft()">
+            < </button>
+                <button class="nav-right" (click)="goNavRight()"> > </button>
+    </div>
+</section>
