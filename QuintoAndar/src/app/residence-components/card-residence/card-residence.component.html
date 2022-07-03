@@ -1,11 +1,30 @@
+<div class="card-residence">
+    <div class="card-residence-carrousel">
 
-<div class="slide-content-5">
-    <img src="../../../assets/Home/casa800x498.jpg" alt="" />
-    <label>{{residence.name}}<br></label>
-    <label>{{residence.type}}<br></label>
-    <label>{{residence.price}}<br></label>
-    <label>{{residence.address.state}}<br></label>
-    <label>{{residence.squareMeters}}<br></label>
-    <label>{{residence.rooms}}<br></label>
-    <label>{{residence.sellMode}}<br></label>
+        <div class="tag-residence"><label>Exclusivo</label></div>
+
+        <div class="slide-imgs-residence" id="slide-imgs-residence">
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+            <img src="../../../assets/Home/casa800x498.jpg" alt="" />
+        </div>
+
+        <div class="nav-carrousel">
+            <button class="nav-left" (click)="goNavLeft()"> < </button>
+            <button class="nav-right" (click)="goNavRight()"> > </button>
+        </div>
+    </div>
+
+    <div class="residence-infos">
+        <label>{{residence.name}}<br></label>
+        <label>{{residence.type}}<br></label>
+        <label>{{residence.price}}<br></label>
+        <label>{{residence.address.state}}<br></label>
+        <label>{{residence.squareMeters}}<br></label>
+        <label>{{residence.rooms}}<br></label>
+        <label>{{residence.sellMode}}<br></label>
+    </div>
 </div>

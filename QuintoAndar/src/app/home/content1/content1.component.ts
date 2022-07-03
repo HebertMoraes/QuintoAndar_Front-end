@@ -17,7 +17,7 @@ export class Content1Component implements OnInit {
     this.iconSelected = (document.getElementById("icon-selected-content-1") as HTMLElement);
   }
 
-  public goNavLeft (){
+  public goNavLeft() {
     this.slides.style.transition = "transform 1s";
     this.slides.style.transform = "translateX(0)";
 
@@ -25,7 +25,7 @@ export class Content1Component implements OnInit {
     this.iconSelected.style.transform = "translateX(0)";
   }
 
-  public goNavRight(){
+  public goNavRight() {
     this.slides.style.transition = "transform 1s";
     this.slides.style.transform = "translateX(-100%)";
 

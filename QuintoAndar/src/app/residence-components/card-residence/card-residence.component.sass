@@ -6,15 +6,59 @@
     margin: 0px
     box-sizing: border-box
 
-.slide-content-5
+.card-residence
     position: relative
     width: 300px
     height: 330px
     background-color: variables.$secondary-color
     margin: 30px
     margin-left: 0px
-    border: 1px solid gray
 
-    img
-        max-width: 298px
-        max-height: 299px
+    .card-residence-carrousel
+        position: relative
+        overflow: hidden
+        width: 298px
+        height: 185px
+
+        .tag-residence
+            position: absolute
+            top: 10px
+            left: 10px
+            padding: 5px
+            padding-top: 1px
+            padding-bottom: 1px
+            background-color: variables.$secondary-color
+            z-index: 1
+
+            label
+                font-size: 0.9em
+
+        .slide-imgs-residence
+            display: flex
+
+            img
+                max-width: 298px
+                max-height: 299px
+
+        .nav-carrousel
+            background-color: blue
+
+            .nav-left
+                position: absolute
+                padding: 15px
+                margin: 10px
+                bottom: 50px
+                left: 0px
+
+            .nav-right
+                position: absolute
+                padding: 15px
+                margin: 10px
+                bottom: 50px
+                right: 0px
+
+    .residence-infos
+        border: 1px solid variables.$fourth-color
+        
+        &:hover
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
