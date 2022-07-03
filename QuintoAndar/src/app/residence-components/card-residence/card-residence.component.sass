@@ -45,20 +45,66 @@
 
             .nav-left
                 position: absolute
-                padding: 15px
                 margin: 10px
-                bottom: 50px
+                bottom: 55px
                 left: 0px
+
+                padding-top: 2px
+                border-radius: 50%
+                border: none
+                cursor: pointer
+                width: 30px
+                height: 30px
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
 
             .nav-right
                 position: absolute
-                padding: 15px
                 margin: 10px
-                bottom: 50px
+                bottom: 55px
                 right: 0px
+
+                padding-top: 2px
+                border-radius: 50%
+                border: none
+                cursor: pointer
+                width: 30px
+                height: 30px
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
 
     .residence-infos
         border: 1px solid variables.$fourth-color
+        position: relative
+        height: 140px
         
         &:hover
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+
+        .residence-type
+            position: absolute
+            padding: 10px
+
+        .residence-price
+            position: absolute
+            padding: 10px
+            right: 0px
+
+        .residence-name
+            position: absolute
+            padding: 10px
+            top: 33px
+
+        .residence-address
+            position: absolute
+            padding: 10px
+            top: 60px
+
+        .residence-squareMeters
+            position: absolute
+            padding: 10px
+            top: 100px
+
+        .residence-rooms
+            position: absolute
+            padding: 10px
+            right: 50%
+            bottom: 0px
