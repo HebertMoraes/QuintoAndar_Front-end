@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-content1',
@@ -7,29 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Content1Component implements OnInit {
 
-  slides!: HTMLElement;
-  iconSelected!: HTMLElement;
+  @ViewChild('slidesContent1') slides!: ElementRef
+  @ViewChild('iconSelectedContent1') iconSelected!: ElementRef
 
   constructor() { }
 
   ngOnInit(): void {
-    this.slides = (document.getElementById("slides-content-1") as HTMLElement);
-    this.iconSelected = (document.getElementById("icon-selected-content-1") as HTMLElement);
   }
 
   public goNavLeft() {
-    this.slides.style.transition = "transform 1s";
-    this.slides.style.transform = "translateX(0)";
 
-    this.iconSelected.style.transition = "transform 1s";
-    this.iconSelected.style.transform = "translateX(0)";
+    this.slides.nativeElement.style.transform = "translateX(0)";
+    this.iconSelected.nativeElement.style.transform = "translateX(0)";
   }
 
   public goNavRight() {
-    this.slides.style.transition = "transform 1s";
-    this.slides.style.transform = "translateX(-100%)";
 
-    this.iconSelected.style.transition = "transform 1s";
-    this.iconSelected.style.transform = "translateX(101%)";
+    this.slides.nativeElement.style.transform = "translateX(-100%)";
+    this.iconSelected.nativeElement.style.transform = "translateX(101%)";
   }
 }
