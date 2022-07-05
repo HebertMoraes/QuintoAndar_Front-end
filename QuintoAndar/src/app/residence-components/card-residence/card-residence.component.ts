@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Residence } from 'src/app/entities/residence';
 
 @Component({
@@ -10,31 +10,31 @@ export class CardResidenceComponent implements OnInit {
 
   @Input() residence!: Residence;
 
-  slides!: HTMLElement;
+  @ViewChild('slideImgsResidence') slides!: ElementRef;
+
   posSlides: number = 0;
   distanceSlideMov: number = 100;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.slides = (document.getElementById("slide-imgs-residence") as HTMLElement);
   }
 
   public goNavLeft() {
 
-    this.slides.style.transition = "transform 0.5s";
+    this.slides.nativeElement.style.transition = "transform 0.5s";
     if (this.posSlides < 0) {
       this.posSlides += this.distanceSlideMov;
-      this.slides.style.transform = `translateX(${this.posSlides}%)`;
+      this.slides.nativeElement.style.transform = `translateX(${this.posSlides}%)`;
     }
   }
 
   public goNavRight() {
 
-    this.slides.style.transition = "transform 0.5s";
+    this.slides.nativeElement.style.transition = "transform 0.5s";
     if (this.posSlides > -700) {
       this.posSlides -= this.distanceSlideMov;
-      this.slides.style.transform = `translateX(${this.posSlides}%)`;
+      this.slides.nativeElement.style.transform = `translateX(${this.posSlides}%)`;
     }
   }
 }
