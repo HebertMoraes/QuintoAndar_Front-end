@@ -5,12 +5,12 @@
         <div>
             <button class="btn-to-hire" (click)="btnToHire()">
                 Alugar
-                <div id="to-hire" class="selected-mode"></div>
+                <div class="selected-mode" #toHireHeader></div>
             </button>
 
             <button class="btn-to-buy" (click)="btnToBuy()">
                 Comprar
-                <div id="to-buy"></div>
+                <div #toBuyHeader></div>
             </button>
         </div>
 
@@ -46,9 +46,9 @@
             <div class="field-search">
                 <div>
                     <!-- <img src="../../assets/Home/pin-location.svg" alt="Local" /> -->
-                    <label id="label-to-hire-or-buy">Aluguel até</label>
+                    <label #labelToHireOrBuy>Aluguel até</label>
                 </div>
-                <select id="toHireOrBuyPrices">
+                <select #toHireOrBuyPrices>
                     <option value="" selected disabled hidden>Escolha o valor</option>
                     <option>R$1.000,00</option>
                     <option>R$2.000,00</option>

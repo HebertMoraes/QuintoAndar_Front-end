@@ -3,22 +3,22 @@
     <div class="search-to-hire-buy">
         <p>Imóveis mais recentes em</p>
 
-        <select id="select-states-content-5" (change)="choiceState()">
+        <select id="select-states-content-5" #selectStatesContent5 (change)="choiceState()">
             <option selected disabled hidden>todos</option>
             <option *ngFor="let state of allStates" value="{{state}}">{{state}}</option>
         </select>
 
         <div class="alternate-to-hire-buy">
-            <div class="btn-alternate selected" (click)="btnToHire()" id="btn-to-hire-content5">
+            <div class="btn-alternate selected" (click)="btnToHire()" id="btn-to-hire-content5" #btnToHireContent5>
                 <label class="label-to-hire">Alugar</label>
             </div>
-            <div class="btn-alternate" (click)="btnToBuy()" id="btn-to-buy-content5">
+            <div class="btn-alternate" (click)="btnToBuy()" id="btn-to-buy-content5" #btnToBuyContent5>
                 <label class="label-to-buy">Comprar</label>
             </div>
         </div>
     </div>
     <div class="carrousel-content-5">
-        <div class="slides-content-5" id="slides-content-5">
+        <div class="slides-content-5" #slidesContent5>
             
             <app-card-residence *ngFor="let residence of listOfResidence" 
             [residence]="residence"></app-card-residence>
