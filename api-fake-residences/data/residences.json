@@ -10,8 +10,8 @@
                 "state": "São Paulo",
                 "street": "Rua Exemplo 1"
             },
-            "squareMeters": "50m",
-            "rooms": "3 quartos"
+            "squareMeters": "50",
+            "rooms": "3"
         },
         {
             "id": "1234",
@@ -23,8 +23,8 @@
                 "state": "São Paulo",
                 "street": "Rua Exemplo 2"
             },
-            "squareMeters": "50m",
-            "rooms": "4 quartos"
+            "squareMeters": "50",
+            "rooms": "4"
         },
         {
             "id": "12345",
@@ -36,8 +36,8 @@
                 "state": "Rio de Janeiro",
                 "street": "Rua Exemplo 2"
             },
-            "squareMeters": "40m",
-            "rooms": "2 quartos"
+            "squareMeters": "40",
+            "rooms": "2"
         },
         {
             "id": "123456",
@@ -49,8 +49,8 @@
                 "state": "Rio de Janeiro",
                 "street": "Rua Exemplo 3"
             },
-            "squareMeters": "40m",
-            "rooms": "3 quartos"
+            "squareMeters": "40",
+            "rooms": "3"
         }, 
         {
             "id": "1234567",
@@ -62,8 +62,8 @@
                 "state": "Osasco",
                 "street": "Rua Exemplo 4"
             },
-            "squareMeters": "25m",
-            "rooms": "1 quartos"
+            "squareMeters": "25",
+            "rooms": "1"
         }
     ]
 }

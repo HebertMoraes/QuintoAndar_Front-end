@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Content5Component } from './content5.component';
 
-describe('Content5Component', () => {
+fdescribe('Content5Component', () => {
   let component: Content5Component;
   let fixture: ComponentFixture<Content5Component>;
 
@@ -21,5 +21,10 @@ describe('Content5Component', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('ao selecionar São Paulo no select, as residences é filtradas para as de São Paulo', () => {
+
+    //
   });
 });

@@ -6,11 +6,11 @@ import { Residence } from '../entities/residence';
 
 import { ResidenceService } from './residence.service';
 
-fdescribe('ResidenceService', () => {
+describe('ResidenceService', () => {
 
   let service: ResidenceService;
 
-  const getAllMockData = [
+  const getAllMock = [
     {
       "id": "123",
       "name": "apartamentoooo-exemplo",
@@ -21,8 +21,8 @@ fdescribe('ResidenceService', () => {
         "state": "São Paulo",
         "street": "Rua Exemplo 1"
       },
-      "squareMeters": "50m",
-      "rooms": "3 quartos"
+      "squareMeters": "50",
+      "rooms": "3"
     },
     {
       "id": "1234",
@@ -34,8 +34,8 @@ fdescribe('ResidenceService', () => {
         "state": "São Paulo",
         "street": "Rua Exemplo 2"
       },
-      "squareMeters": "50m",
-      "rooms": "4 quartos"
+      "squareMeters": "50",
+      "rooms": "4"
     },
     {
       "id": "12345",
@@ -47,8 +47,8 @@ fdescribe('ResidenceService', () => {
         "state": "Rio de Janeiro",
         "street": "Rua Exemplo 2"
       },
-      "squareMeters": "40m",
-      "rooms": "2 quartos"
+      "squareMeters": "40",
+      "rooms": "2"
     },
     {
       "id": "123456",
@@ -60,8 +60,8 @@ fdescribe('ResidenceService', () => {
         "state": "Rio de Janeiro",
         "street": "Rua Exemplo 3"
       },
-      "squareMeters": "40m",
-      "rooms": "3 quartos"
+      "squareMeters": "40",
+      "rooms": "3"
     },
     {
       "id": "1234567",
@@ -73,12 +73,12 @@ fdescribe('ResidenceService', () => {
         "state": "Osasco",
         "street": "Rua Exemplo 4"
       },
-      "squareMeters": "25m",
-      "rooms": "1 quartos"
+      "squareMeters": "25",
+      "rooms": "1"
     }
   ];
 
-  const getByID123MockData = [
+  const getByID123Mock = [
     {
       "id": "123",
       "name": "apartamentoooo-exemplo",
@@ -89,10 +89,15 @@ fdescribe('ResidenceService', () => {
         "state": "São Paulo",
         "street": "Rua Exemplo 1"
       },
-      "squareMeters": "50m",
-      "rooms": "3 quartos"
+      "squareMeters": "50",
+      "rooms": "3"
     }
   ];
+
+  const addressMock = new Address(getByID123Mock[0].address.state, getByID123Mock[0].address.street);
+
+  const residenceId123Mock = new Residence(getByID123Mock[0].name, getByID123Mock[0].type, getByID123Mock[0].price,
+    addressMock, Number(getByID123Mock[0].squareMeters), Number(getByID123Mock[0].rooms));
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -101,13 +106,9 @@ fdescribe('ResidenceService', () => {
     service = TestBed.inject(ResidenceService);
   });
 
-  it('#getObservableValue should return value from observable', () => {
+  it('state e street são strings', () => {
 
-    let addressMock = new Address("São Paulo", "Rua Exemplo 1");
-
-    let residenceMock = new Residence("apartamentoooo-exemplo", "apartamento", "R$999,00", addressMock, 50, 3);
-
-    let residencesArray: Residence[] = [residenceMock];
+    let residencesArray: Residence[] = [residenceId123Mock];
 
     spyOn(service, 'getAll').and.returnValue(of(residencesArray));
 
@@ -117,32 +118,33 @@ fdescribe('ResidenceService', () => {
         expect(residence.address.state).toBeInstanceOf(String);
         expect(residence.address.street).toBeInstanceOf(String);
       });
-
     });
+  });
 
+  it('squareMeters e rooms são numbers', () => {
+
+    let residencesArray: Residence[] = [residenceId123Mock];
+
+    spyOn(service, 'getAll').and.returnValue(of(residencesArray));
+
+    service.getAll().subscribe(residences => {
+
+      residences.forEach(residence => {
+        expect(residence.squareMeters).toBeInstanceOf(Number);
+        expect(residence.rooms).toBeInstanceOf(Number);
+      });
+    });
   });
 
   it('getByID retornando apenas um Residence dentro do array', () => {
 
-    expect(getByID123MockData).toHaveSize(1);
+    expect(getByID123Mock).toHaveSize(1);
   });
 
   it('getAll retornando mais de um Residence dentro do array', () => {
 
-    expect(getAllMockData).not.toHaveSize(0);
-    expect(getAllMockData).not.toHaveSize(1);
-  });
-
-  it('O state não é nulo e é do tipo string', () => {
-    expect(getByID123MockData[0].address.state).toBeInstanceOf(String);
-  });
-
-  it('os states e street de cada residence do getAll não são falsys', () => {
-
-    getAllMockData.forEach(residence => {
-      expect(residence.address.state).not.toBeFalsy();
-      expect(residence.address.street).not.toBeFalsy();
-    });
+    expect(getAllMock).not.toHaveSize(0);
+    expect(getAllMock).not.toHaveSize(1);
   });
 
 });
