@@ -1,9 +1,12 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { Address } from '../entities/address';
+import { Residence } from '../entities/residence';
 
 import { ResidenceService } from './residence.service';
 
-describe('ResidenceService', () => {
+fdescribe('ResidenceService', () => {
 
   let service: ResidenceService;
 
@@ -98,6 +101,27 @@ describe('ResidenceService', () => {
     service = TestBed.inject(ResidenceService);
   });
 
+  it('#getObservableValue should return value from observable', () => {
+
+    let addressMock = new Address("São Paulo", "Rua Exemplo 1");
+
+    let residenceMock = new Residence("apartamentoooo-exemplo", "apartamento", "R$999,00", addressMock, 50, 3);
+
+    let residencesArray: Residence[] = [residenceMock];
+
+    spyOn(service, 'getAll').and.returnValue(of(residencesArray));
+
+    service.getAll().subscribe(residences => {
+
+      residences.forEach(residence => {
+        expect(residence.address.state).toBeInstanceOf(String);
+        expect(residence.address.street).toBeInstanceOf(String);
+      });
+
+    });
+
+  });
+
   it('getByID retornando apenas um Residence dentro do array', () => {
 
     expect(getByID123MockData).toHaveSize(1);
@@ -114,15 +138,11 @@ describe('ResidenceService', () => {
   });
 
   it('os states e street de cada residence do getAll não são falsys', () => {
-    
+
     getAllMockData.forEach(residence => {
       expect(residence.address.state).not.toBeFalsy();
       expect(residence.address.street).not.toBeFalsy();
     });
   });
-
-  // it('eee', () => {
-  //   expect(100).toBeCloseTo(100, 2);
-  // })
 
 });
