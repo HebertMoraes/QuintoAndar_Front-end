@@ -13,6 +13,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { CardResidenceComponent } from './residence-components/card-residence/card-residence.component';
 import { ResidencePageComponent } from './residence-components/residence-page/residence-page.component';
+import { FooterDefaultComponent } from './footer-default/footer-default.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ResidencePageComponent } from './residence-components/residence-page/re
     HeaderComponent,
     UserAccountComponent,
     CardResidenceComponent,
-    ResidencePageComponent
+    ResidencePageComponent,
+    FooterDefaultComponent
   ],
   imports: [
     BrowserModule,

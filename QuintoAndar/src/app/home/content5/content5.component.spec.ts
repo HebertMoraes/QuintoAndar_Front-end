@@ -8,7 +8,7 @@ import { Residence } from 'src/app/entities/residence';
 import { of } from 'rxjs';
 import { Address } from 'src/app/entities/address';
 
-fdescribe('Content5Component', () => {
+describe('Content5Component', () => {
   let component: Content5Component;
   let fixture: ComponentFixture<Content5Component>;
 

@@ -30,7 +30,7 @@ nav
             &:hover
                 background-color: #F8F9F5
 
-        .dropdown
+        .dropdown-account
             @include mixins.item-nav-bar()
             margin-left: auto
             position: relative
@@ -61,6 +61,47 @@ nav
                         background-color: #F8F9F5
 
                 .divisor-list-account
+                    padding: 10px
+
+                    div
+                        position: absolute
+                        background-color: gray
+                        width: 86%
+                        height: 1px
+
+            &:hover
+
+                .dropdown-content
+                    display: block
+
+        .dropdown-item-list
+            @include mixins.item-nav-bar()
+            position: relative
+
+            &:hover
+                background-color: #F8F9F5
+
+            .dropdown-content
+                display: none
+                position: absolute
+                background-color: variables.$secondary-color
+                min-width: 160px
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+                z-index: 3
+                left: 0px
+                top: 25px
+                justify-content: center
+
+                .item-list
+                    color: black
+                    padding: 12px 16px
+                    text-decoration: none
+                    display: block
+
+                    &:hover
+                        background-color: #F8F9F5
+
+                .divisor-list
                     padding: 10px
 
                     div
