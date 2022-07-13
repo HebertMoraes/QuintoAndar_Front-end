@@ -14,6 +14,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { CardResidenceComponent } from './residence-components/card-residence/card-residence.component';
 import { ResidencePageComponent } from './residence-components/residence-page/residence-page.component';
 import { FooterDefaultComponent } from './footer-default/footer-default.component';
+import { Content7Component } from './content7/content7.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterDefaultComponent } from './footer-default/footer-default.componen
     UserAccountComponent,
     CardResidenceComponent,
     ResidencePageComponent,
-    FooterDefaultComponent
+    FooterDefaultComponent,
+    Content7Component
   ],
   imports: [
     BrowserModule,

@@ -11,15 +11,17 @@ nav
     z-index: 2
 
     background-color: variables.$secondary-color
-    padding-top: 35px
-    padding-bottom: 35px
     padding-left: 28px
+    padding-right: 28px
     width: 100%
+    height: 96px
     border: 1px solid variables.$fourth-color
 
     ul
         list-style: none
         display: flex
+        align-items: center
+        margin-top: 20px
 
         .logo-mav-bar
             @include mixins.item-nav-bar()
@@ -34,8 +36,9 @@ nav
             @include mixins.item-nav-bar()
             margin-left: auto
             position: relative
-            right: 30px
+            right: 10px
             border: 1px solid black
+            padding: 16px
 
             &:hover
                 background-color: #F8F9F5
@@ -47,8 +50,8 @@ nav
                 min-width: 160px
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
                 z-index: 3
-                right: 5px
-                top: 24px
+                right: 0px
+                top: 30px
                 justify-content: center
 
                 .item-list-account
@@ -89,7 +92,7 @@ nav
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
                 z-index: 3
                 left: 0px
-                top: 25px
+                top: 23px
                 justify-content: center
 
                 .item-list
