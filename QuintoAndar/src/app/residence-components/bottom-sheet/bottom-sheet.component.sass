@@ -69,6 +69,37 @@
                         font-size: 0.8em
                         // text-align: center
 
+    &-expand
+
+        &-tittle
+            display: flex
+
+            h2
+                font-size: 1.2em
+                margin-inline: auto
+                margin-bottom: 16px
+
+        &-option
+            padding-bottom: 16px
+            display: flex
+            align-items: center
+            // align-content: center
+
+            &-icon
+                align-self: flex-start
+
+            &-texts
+
+                &-first-text
+                    margin-right: auto
+
+                &-second-text
+                    margin-right: auto
+                    font-size: 0.5em
+
+            &-btn
+                align-self: flex-end
+
 .dark-background
     position: fixed
     // z-index: 1
@@ -84,16 +115,16 @@
     transition: transform 1s
     transform: translateY(100%)
     
-.top-expand
-    background-color: #FFFFFF
-    border-radius: 10% 10% 0px 0px
-    width: 100%
-    height: auto
+// .top-expand
+//     background-color: #FFFFFF
+//     border-radius: 10% 10% 0px 0px
+//     width: 100%
+//     height: auto
 
 .top-expand-opened
-    transition: transform 1s
+    transition: transform 0.6s
     transform: translateY(0%)
 
 .top-expand-closed
-    transition: transform 1s
-    transform: translateY(-300%)
+    transition: transform 0.6s
+    transform: translateY(60%)

@@ -20,13 +20,13 @@ export class BottomSheetComponent implements OnInit {
 
   ngOnInit(): void {
 
-    setInterval( ()=> {
-      if (this.open){
-        this.open = false;
-      } else {
-        this.open = true;
-      }
-    }, 3000);
+    // setInterval( ()=> {
+    //   if (this.open){
+    //     this.open = false;
+    //   } else {
+    //     this.open = true;
+    //   }
+    // }, 3000);
   }
 
   ngAfterViewInit(): void {

@@ -1,5 +1,78 @@
 <div *ngIf="bottomSheetType === 'Modal'" class="dark-background"></div>
 
+<div [ngSwitch]="bottomSheetType">
+    <div *ngSwitchCase="'Default'" class="bottom-sheet shadow-top" [ngClass]="{'opened': open, 'closed': !open}">
+
+        <ul class="bottom-sheet-default">
+            <li *ngFor="let option of options" class="bottom-sheet-default-option"
+                (click)="clickOnOption(option.optionAction)">
+                <!-- <img src="{{option.iconImg}}.svg" alt=""> -->
+                <div class="bottom-sheet-default-option-icon"
+                    style="width: 35px; height: 35px; background-color: antiquewhite;">Icon</div>
+
+                <div class="bottom-sheet-default-option-text">{{option.text}}</div>
+
+                <button class="bottom-sheet-default-option-btn">rightarrow</button>
+            </li>
+        </ul>
+
+    </div>
+
+    <div *ngSwitchCase="'Modal'" class="bottom-sheet shadow-top" [ngClass]="{'opened': open, 'closed': !open}">
+
+        <div class="bottom-sheet-modal">
+            <div class="bottom-sheet-modal-tittle">
+                <h2>{{tittle}}</h2>
+            </div>
+            <div class="bottom-sheet-modal-options">
+                <div *ngFor="let option of options" class="bottom-sheet-modal-options-option"
+                    (click)="clickOnOption(option.optionAction)">
+                    <!-- <img src="{{option.iconImg}}.svg" alt=""> -->
+                    <div class="bottom-sheet-modal-options-option-icon"
+                        style="width: 50px; height: 50px; background-color: antiquewhite;">Icon</div>
+
+                    <div class="bottom-sheet-modal-options-option-text">
+                        <h3>{{option.text}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngSwitchCase="'Expand'" class="bottom-sheet shadow-top" 
+    [ngClass]="{'top-expand-opened': open, 'top-expand-closed': !open}">
+
+        <div class="bottom-sheet-expand">
+            <div class="bottom-sheet-expand-tittle">
+                <h2>{{tittle}}</h2>
+            </div>
+            <div *ngFor="let option of options" class="bottom-sheet-expand-option"
+                (click)="clickOnOption(option.optionAction)">
+
+                <!-- <img src="{{option.iconImg}}.svg" alt=""> -->
+                <div class="bottom-sheet-expand-option-icon"
+                style="width: 50px; height: 50px; background-color: antiquewhite;">Icon</div>
+
+                <div class="bottom-sheet-expand-option-texts">
+                    <div class="bottom-sheet-expand-option-texts-first-text">
+                        <h3>{{option.text}}</h3>
+                    </div>
+                    <div class="bottom-sheet-expand-option-texts-second-text">
+                        <h3>{{option.secondText}}</h3>
+                    </div>
+                </div>
+
+                <button class="bottom-sheet-expand-option-btn">rightarrow</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- <div *ngIf="bottomSheetType === 'Modal'" class="dark-background"></div>
+
 <div class="bottom-sheet shadow-top" [ngSwitch]="bottomSheetType" [ngClass]="{'opened': open, 'closed': !open}"
     #shapeBottomSheet>
 
@@ -7,7 +80,7 @@
         <li *ngFor="let option of options" class="bottom-sheet-default-option"
             (click)="clickOnOption(option.optionAction)">
             <!-- <img src="{{option.iconImg}}.svg" alt=""> -->
-            <div class="bottom-sheet-default-option-icon"
+<!-- <div class="bottom-sheet-default-option-icon"
                 style="width: 35px; height: 35px; background-color: antiquewhite;">Icon</div>
 
             <div class="bottom-sheet-default-option-text">{{option.text}}</div>
@@ -23,9 +96,9 @@
         </div>
         <div class="bottom-sheet-modal-options">
             <div *ngFor="let option of options" class="bottom-sheet-modal-options-option"
-                (click)="clickOnOption(option.optionAction)">
-                <!-- <img src="{{option.iconImg}}.svg" (click)="clickOnOption(option.optionAction)" alt=""> -->
-                <div class="bottom-sheet-modal-options-option-icon"
+                (click)="clickOnOption(option.optionAction)"> -->
+<!-- <img src="{{option.iconImg}}.svg" (click)="clickOnOption(option.optionAction)" alt=""> -->
+<!-- <div class="bottom-sheet-modal-options-option-icon"
                     style="width: 50px; height: 50px; background-color: antiquewhite;">Icon</div>
 
                 <div class="bottom-sheet-modal-options-option-text">
@@ -44,4 +117,4 @@
             <button (click)="clickOnOption(option.optionAction)">escolher</button>
         </div>
     </div>
-</div>
+</div> -->
