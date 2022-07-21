@@ -1,0 +1,47 @@
+<div *ngIf="bottomSheetType === 'Modal'" class="dark-background"></div>
+
+<div class="bottom-sheet shadow-top" [ngSwitch]="bottomSheetType" [ngClass]="{'opened': open, 'closed': !open}"
+    #shapeBottomSheet>
+
+    <ul class="bottom-sheet-default" *ngSwitchCase="'Default'">
+        <li *ngFor="let option of options" class="bottom-sheet-default-option"
+            (click)="clickOnOption(option.optionAction)">
+            <!-- <img src="{{option.iconImg}}.svg" alt=""> -->
+            <div class="bottom-sheet-default-option-icon"
+                style="width: 35px; height: 35px; background-color: antiquewhite;">Icon</div>
+
+            <div class="bottom-sheet-default-option-text">{{option.text}}</div>
+
+            <button class="bottom-sheet-default-option-btn">right
+                arrow</button>
+        </li>
+    </ul>
+
+    <div class="bottom-sheet-modal" *ngSwitchCase="'Modal'">
+        <div class="bottom-sheet-modal-tittle">
+            <h2>{{tittle}}</h2>
+        </div>
+        <div class="bottom-sheet-modal-options">
+            <div *ngFor="let option of options" class="bottom-sheet-modal-options-option"
+                (click)="clickOnOption(option.optionAction)">
+                <!-- <img src="{{option.iconImg}}.svg" (click)="clickOnOption(option.optionAction)" alt=""> -->
+                <div class="bottom-sheet-modal-options-option-icon"
+                    style="width: 50px; height: 50px; background-color: antiquewhite;">Icon</div>
+
+                <div class="bottom-sheet-modal-options-option-text">
+                    <h3>{{option.text}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-sheet-expensive" *ngSwitchCase="'Expand'">
+
+        <div class="top-expand" [ngClass]="{'top-expand-opened': open, 'top-expand-closed': !open}">{{tittle}}</div>
+
+        <div *ngFor="let option of options" class="bottom-sheet-expensive-option"
+            (click)="clickOnOption(option.optionAction)">
+            <button (click)="clickOnOption(option.optionAction)">escolher</button>
+        </div>
+    </div>
+</div>

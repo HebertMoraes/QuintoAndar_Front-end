@@ -24,11 +24,20 @@ export class Content5Component implements OnInit {
   @ViewChild('selectStatesContent5') selectStatesContent5!: ElementRef;
   @ViewChild('slidesContent5') slides!: ElementRef
 
+  listResidenceLenght!: number;
+
   constructor() { }
 
   ngOnInit(): void {
 
     this.selectStatesHeader = (document.getElementById("select-states-header") as HTMLSelectElement);
+
+    if (this.listOfResidence === undefined  || this.listOfResidence === null) {
+      this.listResidenceLenght = 0;
+
+    } else {
+      this.listResidenceLenght = this.listOfResidence.length;
+    }
   }
 
   public btnToHire() {

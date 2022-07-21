@@ -42,4 +42,7 @@ export class UserAccountComponent implements OnInit {
     }
   }
 
+  public clickOnOptionBottomSheet(choice: string) {
+    console.log(choice + " clicou");
+  }
 }

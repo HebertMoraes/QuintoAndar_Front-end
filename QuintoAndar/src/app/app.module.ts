@@ -15,6 +15,8 @@ import { CardResidenceComponent } from './residence-components/card-residence/ca
 import { ResidencePageComponent } from './residence-components/residence-page/residence-page.component';
 import { FooterDefaultComponent } from './footer-default/footer-default.component';
 import { Content7Component } from './content7/content7.component';
+import { FormsModule } from '@angular/forms';
+import { BottomSheetComponent } from './residence-components/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { Content7Component } from './content7/content7.component';
     CardResidenceComponent,
     ResidencePageComponent,
     FooterDefaultComponent,
-    Content7Component
+    Content7Component,
+    BottomSheetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    CommonModule, 
+    CommonModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [],

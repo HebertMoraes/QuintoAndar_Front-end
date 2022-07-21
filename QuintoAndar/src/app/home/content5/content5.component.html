@@ -19,10 +19,20 @@
     </div>
     <div class="carrousel-content-5">
         <div class="slides-content-5" #slidesContent5>
-            
-            <app-card-residence *ngFor="let residence of listOfResidence" 
-            [residence]="residence"></app-card-residence>
-            
+
+            <div *ngIf="listResidenceLenght === 0; else displayCards"> 
+                <div style="width: 300px;
+                height: 325px;
+                background-color: red;
+                margin: 30px;
+                margin-left: 0px;">
+                    alooo
+                </div>
+            </div>
+
+            <ng-template #displayCards>
+                <app-card-residence *ngFor="let residence of listOfResidence" [residence]="residence"></app-card-residence>
+            </ng-template>
         </div>
     </div>
     <div class="nav-carrousel-content-5">

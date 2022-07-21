@@ -1,6 +1,32 @@
 <section class="content-7">
-    <div class="part-one-content-7">
+    <div class="part-one-content7">
         <h1>Onde você quiser, <br>tem um QuintoAndar</h1>
         <button>Ver todas as cidades ></button>
     </div>
+    <div class="part-two-content7">
+        <h2>Destaques</h2>
+
+        <div class="btns-selectors">
+            <button class="btn-selector" *ngFor="let option of allStatesHighlights" value="{{option}}" 
+            (click)="changePositionOfOptionState('{{option}}')"> {{option}}
+            </button>
+        </div>
+
+        <div class="state-selected-content7">
+            <div class="option-state-selected-content7" #optionStateSelectedContent7></div>
+        </div>
+
+    </div>
+
+    <div class="divisor"></div>
+
+    <h2 *ngFor="let item of list">{{item.nome}}</h2>
+
+    <ng-template ngFor let-item [ngForOf]="list">
+        <p>{{item.nome}}</p>
+    </ng-template>
+
+    <input [(ngModel)]="nome">
+    <button (click)="save()">Salvar</button>
+    <button (click)="deleteLast()">Exluir último</button>
 </section>
